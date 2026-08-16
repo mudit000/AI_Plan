@@ -1,4 +1,4 @@
-First Integrate your Github copilot with free Locally running ollama model for free code assistant.
+- First Integrate your Github copilot with free Locally running ollama model for free code assistant.You can use Github copilot free subscription for it and point it to local serving ollama model.I used "gemma4:e4b" with 132k context size window.
 
 
 # AI/LLM Hands-On Curriculum for DevOps Engineers (2 Weeks, macOS)
