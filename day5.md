@@ -1,6 +1,6 @@
 # Day 5 — Prompt Engineering as a Discipline
 
-![Prompt anatomy and sampling temperature](day5-diagram.svg)
+![Prompt anatomy and sampling temperature](./img/day5-diagram.svg)
 
 *A request is assembled from a system message (persona + rules), optional few-shot examples, and the actual user message — then temperature reshapes how the model picks its next token, from sharply deterministic (low temp) to spread-out and varied (high temp). Today you'll manipulate every piece of this yourself and watch outputs change.*
 

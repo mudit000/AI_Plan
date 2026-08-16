@@ -1,7 +1,7 @@
 
 # Day 1 — ML Mental Model + Environment Setup
 
-![ML lifecycle mapped to CI/CD](day1-diagram.svg)
+![ML lifecycle mapped to CI/CD](./img/day1-diagram.svg)
  
 *The ML lifecycle (Data → Train → Evaluate → Model → Serve) maps directly onto your CI/CD pipeline (Code → Build → Test → Artifact → Deploy). Today lives entirely in the last box — pulling and running an already-trained model, no build step of your own.*
 
