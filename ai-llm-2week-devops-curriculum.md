@@ -1,3 +1,6 @@
+First Integrate your Github copilot with free Locally running ollama model for free code assistant.
+
+
 # AI/LLM Hands-On Curriculum for DevOps Engineers (2 Weeks, macOS)
 
 **Who this is for:** You already know infra, containers, CI/CD, networking, and automation. This plan skips "what is a computer" and goes straight into the ML/LLM stack, mapping new concepts to things you already understand (a model registry is like an artifact repo, a vector DB is like an indexed cache, RAG is like a sidecar that injects context, etc.).
