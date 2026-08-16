@@ -1,0 +1,73 @@
+<svg width="680" height="300" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+<rect width="680" height="300" fill="#ffffff"/>
+
+<text x="40" y="28" font-size="13" fill="#555555">CI/CD (what you know)</text>
+<g>
+<rect x="40" y="40" width="90" height="42" rx="8" fill="#F1F3F4" stroke="#B0B4B8" stroke-width="0.75"/>
+<text x="85" y="66" font-size="12" fill="#222222" text-anchor="middle">Code</text>
+</g>
+<line x1="130" y1="61" x2="160" y2="61" stroke="#888888" stroke-width="1.4" marker-end="url(#arrow1)"/>
+<g>
+<rect x="165" y="40" width="90" height="42" rx="8" fill="#F1F3F4" stroke="#B0B4B8" stroke-width="0.75"/>
+<text x="210" y="66" font-size="12" fill="#222222" text-anchor="middle">Build</text>
+</g>
+<line x1="255" y1="61" x2="285" y2="61" stroke="#888888" stroke-width="1.4" marker-end="url(#arrow1)"/>
+<g>
+<rect x="290" y="40" width="90" height="42" rx="8" fill="#F1F3F4" stroke="#B0B4B8" stroke-width="0.75"/>
+<text x="335" y="66" font-size="12" fill="#222222" text-anchor="middle">Test</text>
+</g>
+<line x1="380" y1="61" x2="410" y2="61" stroke="#888888" stroke-width="1.4" marker-end="url(#arrow1)"/>
+<g>
+<rect x="415" y="40" width="90" height="42" rx="8" fill="#F1F3F4" stroke="#B0B4B8" stroke-width="0.75"/>
+<text x="460" y="66" font-size="12" fill="#222222" text-anchor="middle">Artifact</text>
+</g>
+<line x1="505" y1="61" x2="535" y2="61" stroke="#888888" stroke-width="1.4" marker-end="url(#arrow1)"/>
+<g>
+<rect x="540" y="40" width="90" height="42" rx="8" fill="#F1F3F4" stroke="#B0B4B8" stroke-width="0.75"/>
+<text x="585" y="66" font-size="12" fill="#222222" text-anchor="middle">Deploy</text>
+</g>
+
+<line x1="85" y1="82" x2="85" y2="145" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="210" y1="82" x2="210" y2="145" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="335" y1="82" x2="335" y2="145" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="460" y1="82" x2="460" y2="145" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="585" y1="82" x2="585" y2="145" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="3,3"/>
+
+<text x="40" y="168" font-size="13" fill="#0F7A6B">ML pipeline (the new mapping)</text>
+<g>
+<rect x="40" y="180" width="90" height="42" rx="8" fill="#E4F5F2" stroke="#0F7A6B" stroke-width="0.75"/>
+<text x="85" y="206" font-size="12" fill="#0B4A41" text-anchor="middle">Data</text>
+</g>
+<line x1="130" y1="201" x2="160" y2="201" stroke="#0F7A6B" stroke-width="1.4" marker-end="url(#arrow2)"/>
+<g>
+<rect x="165" y="180" width="90" height="42" rx="8" fill="#E4F5F2" stroke="#0F7A6B" stroke-width="0.75"/>
+<text x="210" y="206" font-size="12" fill="#0B4A41" text-anchor="middle">Train</text>
+</g>
+<line x1="255" y1="201" x2="285" y2="201" stroke="#0F7A6B" stroke-width="1.4" marker-end="url(#arrow2)"/>
+<g>
+<rect x="290" y="180" width="90" height="42" rx="8" fill="#E4F5F2" stroke="#0F7A6B" stroke-width="0.75"/>
+<text x="335" y="206" font-size="12" fill="#0B4A41" text-anchor="middle">Evaluate</text>
+</g>
+<line x1="380" y1="201" x2="410" y2="201" stroke="#0F7A6B" stroke-width="1.4" marker-end="url(#arrow2)"/>
+<g>
+<rect x="415" y="180" width="90" height="42" rx="8" fill="#E4F5F2" stroke="#0F7A6B" stroke-width="0.75"/>
+<text x="460" y="206" font-size="12" fill="#0B4A41" text-anchor="middle">Model</text>
+</g>
+<line x1="505" y1="201" x2="535" y2="201" stroke="#0F7A6B" stroke-width="1.4" marker-end="url(#arrow2)"/>
+<g>
+<rect x="540" y="180" width="90" height="42" rx="8" fill="#0F7A6B" stroke="#0F7A6B" stroke-width="0.75"/>
+<text x="585" y="206" font-size="12" fill="#ffffff" text-anchor="middle">Serve</text>
+</g>
+
+<text x="340" y="258" font-size="12" fill="#444444" text-anchor="middle">Day 1 lives entirely in the last box: pulling and serving an already-trained model</text>
+<text x="340" y="276" font-size="12" fill="#444444" text-anchor="middle">- exactly like pulling a pre-built image and running it, no build step required</text>
+
+<defs>
+<marker id="arrow1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#0F7A6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+</svg>
