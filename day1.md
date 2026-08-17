@@ -170,6 +170,23 @@ for m in models:
     print(f"   -> {response['message']['content'][:100]}...\n")
 ```
 
+```bash
+(venv) muditcse@Mac ai-course % vi benchmark.py
+(venv) muditcse@Mac ai-course % 
+(venv) muditcse@Mac ai-course % python3 benchmark.py 
+llama3.2        |  3.63s | ~70 words | ~19.3 words/sec
+   -> A Kubernetes readiness probe is a test that ensures a container or pod is healthy and ready to recei...
+
+phi3            | 14.23s | ~53 words | ~3.7 words/sec
+   -> A Kubernetes readiness probe continuously checks whether a container within a pod is ready to handle...
+
+llama3.1:8b     |  6.55s | ~52 words | ~7.9 words/sec
+   -> A Kubernetes readiness probe is a health check that determines whether a pod is ready to receive tra...
+
+(venv) muditcse@Mac ai-course % 
+```
+
+
 ### Step 9 — Inspect what "running a model" actually spun up
 
 Purpose: connect this back to the registry/artifact mental model from the prereq doc — nothing here is magic, it's a served artifact.
