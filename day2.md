@@ -175,7 +175,17 @@ print("First 10 values:", vec[:10])
 print("Min/max:", vec.min(), vec.max())
 ```
 **What to notice:** 384 numbers, each typically small (roughly -1 to 1 range for this model). No single number means anything on its own — the pattern across all 384 encodes the sentence's meaning. This is the same object type a vector DB stores per document, just generated standalone here.
+
 ```bash
+(venv) muditcse@Mac ai-course % python3 first_embedding_raw_vector.py 
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+README.md: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10.5k/10.5k [00:00<00:00, 21.9MB/s]
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 6029.75it/s]
+Shape: (384,)
+First 10 values: [-0.00473463  0.05080811 -0.04674405 -0.0026344   0.01762828 -0.04631952
+  0.00402148 -0.02703921 -0.02799736 -0.00091216]
+Min/max: -0.13277146 0.16864385
+(venv) muditcse@Mac ai-course % 
 ```
 ### Step 6 — Batch-embed a realistic set of devops sentences
 
@@ -193,7 +203,13 @@ sentences = [
 vecs = model.encode(sentences)
 print(vecs.shape)   # (7, 384) - 7 sentences, 384 dims each
 ```
+
 ```bash
+(venv) muditcse@Mac ai-course % python3 batch_embedded.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 10190.92it/s]
+(7, 384)
+(venv) muditcse@Mac ai-course % 
 ```
 ### Step 7 — Compute a full similarity matrix and read it like a heatmap table
 
