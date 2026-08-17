@@ -46,7 +46,37 @@ print("Token count:", len(tokens))
 for t in tokens:
     print(f"{t:6d} -> {repr(enc.decode([t]))}")
 ```
+```bash
+(venv) muditcse@Mac ai-course % python3 Encode_and_decode_with_tiktoken.py 
+Token IDs: [265, 40389, 71582, 1306, 264, 4745, 2890, 1817]
+Token count: 8
+   265 -> 're'
+ 40389 -> 'starting'
+ 71582 -> ' nginx'
+  1306 -> ' after'
+   264 -> ' a'
+  4745 -> ' failed'
+  2890 -> ' health'
+  1817 -> ' check'
+(venv) muditcse@Mac ai-course % 
+```
+
 **What to notice:** common words ("after", "a", "failed") often become single tokens, while less common ones may split into pieces. Run `enc.decode(tokens)` and confirm you get the exact original string back — tokenization is lossless, just a different representation.
+
+```bash
+(venv) muditcse@Mac ai-course % python3 Encode_and_decode_with_tiktoken.py
+Token IDs: [265, 40389, 71582, 1306, 264, 4745, 2890, 1817]
+Token count: 8
+   265 -> 'restarting nginx after a failed health check'
+ 40389 -> 'restarting nginx after a failed health check'
+ 71582 -> 'restarting nginx after a failed health check'
+  1306 -> 'restarting nginx after a failed health check'
+   264 -> 'restarting nginx after a failed health check'
+  4745 -> 'restarting nginx after a failed health check'
+  2890 -> 'restarting nginx after a failed health check'
+  1817 -> 'restarting nginx after a failed health check'
+(venv) muditcse@Mac ai-course % 
+```
 
 ### Step 2 — Prove the "strawberry problem" to yourself
 
@@ -56,8 +86,12 @@ for word in ["strawberry", "kubectl", "nginx", "the", "unbelievable"]:
     pieces = [enc.decode([t]) for t in toks]
     print(f"{word:15s} -> {len(toks)} token(s): {pieces}")
 ```
-**What to expect:** `"the"` is 1 token, `"strawberry"` is likely 2-3 tokens, `"kubectl"` and `"nginx"` (less common in general text, common in your world) may split unexpectedly. This is why domain-specific jargon sometimes tokenizes inefficiently — the base tokenizer's vocabulary was built from general internet text, not your infra vocabulary.
+```bash
+```
 
+**What to expect:** `"the"` is 1 token, `"strawberry"` is likely 2-3 tokens, `"kubectl"` and `"nginx"` (less common in general text, common in your world) may split unexpectedly. This is why domain-specific jargon sometimes tokenizes inefficiently — the base tokenizer's vocabulary was built from general internet text, not your infra vocabulary.
+```bash
+```
 ### Step 3 — Practical use case: estimate request cost before sending it
 
 Purpose: this is the real reason engineers check token counts — treat it like estimating the cost of a cloud job before submitting it.
