@@ -241,6 +241,7 @@ S5: 0.18 0.09 0.00 0.14 0.74 1.00 0.20
 S6: 0.12 0.08 0.11 0.29 0.20 0.20 1.00
 (venv) muditcse@Mac ai-course % 
 ```
+
 ### Step 8 — Visualize the clustering (see it, don't just read numbers)
 
 ```python
