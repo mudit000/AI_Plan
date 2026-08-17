@@ -305,26 +305,3 @@ Loading weights: 100%|███████████████████�
 (venv) muditcse@Mac ai-course % 
 ```
 ---
-
-## Deliverable
-
-Save to `~/ai-course/day2-notes.md`:
-
-```markdown
-# Day 2 Notes
-
-## Tokenization
-- "strawberry" tokenized into: ...
-- Token count difference between gpt2 and bert tokenizers for the same sentence: ...
-- Estimated cost of my runbook.txt: ...
-
-## Embeddings
-- Similarity score between the two nginx sentences: ...
-- Similarity score between an nginx sentence and a cert sentence: ...
-- Near-duplicate pairs found: ...
-
-## One thing that surprised me:
-...
-```
-
----
