@@ -298,6 +298,11 @@ for a, b, score in find_near_duplicates(tickets):
 ```
 **Expected result:** the two nginx/liveness-probe tickets should pair up as near-duplicates despite completely different wording — this is a directly deployable pattern for ticket dedup or alert grouping.
 ```bash
+(venv) muditcse@Mac ai-course % python3 near_duplicate_detection.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 6093.88it/s]
+[0.83] 'nginx pod keeps restarting due to failed liveness probe'  ~~  'Liveness probe failing, nginx container restart loop'
+(venv) muditcse@Mac ai-course % 
 ```
 ---
 
