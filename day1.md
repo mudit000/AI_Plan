@@ -80,6 +80,13 @@ import torch
 print("MPS (Metal) available:", torch.backends.mps.is_available())
 print("MPS built:", torch.backends.mps.is_built())
 ```
+
+```bash
+(venv) muditcse@Mac ai-course % python3 Verify_Apple_Silicon_acceleration_Metal.py 
+MPS (Metal) available: True
+MPS built: True
+(venv) muditcse@Mac ai-course % 
+```
 **Expected on Apple Silicon:** both `True`. If `False`, you're on Intel Mac or have an old PyTorch build — CPU inference will still work for everything in this course, just slower.
 
 ### Step 5 — Optional but recommended: MLX (Apple's native ML framework)
