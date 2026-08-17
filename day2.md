@@ -117,6 +117,15 @@ print(f"{n} tokens, ~${cost:.5f} at this rate")
 ```
 Run this against something realistic — a full runbook, a long prompt template, or a big RAG context block — and you have a real pre-flight cost check, the same instinct as `terraform plan` before `apply`.
 ```bash
+
+(venv) muditcse@Mac ai-course % python3 estimate_request_cost.py
+10 tokens, ~$0.00003 at this rate
+(venv) muditcse@Mac ai-course % mkdir docs
+(venv) muditcse@Mac ai-course % touch docs/runbook.txt
+(venv) muditcse@Mac ai-course % vi docs/runbook.txt
+(venv) muditcse@Mac ai-course % python3 estimate_request_cost.py
+78 tokens, ~$0.00019 at this rate
+(venv) muditcse@Mac ai-course % 
 ```
 ### Step 4 — Compare tokenizers across model families
 
