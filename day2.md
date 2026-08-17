@@ -87,11 +87,17 @@ for word in ["strawberry", "kubectl", "nginx", "the", "unbelievable"]:
     print(f"{word:15s} -> {len(toks)} token(s): {pieces}")
 ```
 ```bash
+(venv) muditcse@Mac ai-course % python3 strawberry_problem.py                
+strawberry      -> 3 token(s): ['str', 'aw', 'berry']
+kubectl         -> 1 token(s): ['kubectl']
+nginx           -> 1 token(s): ['nginx']
+the             -> 1 token(s): ['the']
+unbelievable    -> 3 token(s): ['un', 'belie', 'vable']
+(venv) muditcse@Mac ai-course % 
 ```
 
 **What to expect:** `"the"` is 1 token, `"strawberry"` is likely 2-3 tokens, `"kubectl"` and `"nginx"` (less common in general text, common in your world) may split unexpectedly. This is why domain-specific jargon sometimes tokenizes inefficiently — the base tokenizer's vocabulary was built from general internet text, not your infra vocabulary.
-```bash
-```
+
 ### Step 3 — Practical use case: estimate request cost before sending it
 
 Purpose: this is the real reason engineers check token counts — treat it like estimating the cost of a cloud job before submitting it.
@@ -107,7 +113,8 @@ n, cost = estimate_cost(runbook)
 print(f"{n} tokens, ~${cost:.5f} at this rate")
 ```
 Run this against something realistic — a full runbook, a long prompt template, or a big RAG context block — and you have a real pre-flight cost check, the same instinct as `terraform plan` before `apply`.
-
+```bash
+```
 ### Step 4 — Compare tokenizers across model families
 
 Purpose: different model families use different tokenizers, so the *same* text produces *different* token counts and context-window usage depending on which model you target. This matters when picking a model for a cost- or latency-sensitive workload.
@@ -123,7 +130,8 @@ for model_name in ["gpt2", "bert-base-uncased"]:
     print(f"{model_name:20s} -> {len(ids)} tokens")
 ```
 **What to notice:** the token count differs between tokenizers for identical input text. This is why "128K context window" means different actual amounts of *your* text depending on which model's tokenizer is counting.
-
+```bash
+```
 ---
 
 ## Part C — Hands-On: Embeddings
@@ -141,7 +149,8 @@ print("First 10 values:", vec[:10])
 print("Min/max:", vec.min(), vec.max())
 ```
 **What to notice:** 384 numbers, each typically small (roughly -1 to 1 range for this model). No single number means anything on its own — the pattern across all 384 encodes the sentence's meaning. This is the same object type a vector DB stores per document, just generated standalone here.
-
+```bash
+```
 ### Step 6 — Batch-embed a realistic set of devops sentences
 
 ```python
@@ -158,7 +167,8 @@ sentences = [
 vecs = model.encode(sentences)
 print(vecs.shape)   # (7, 384) - 7 sentences, 384 dims each
 ```
-
+```bash
+```
 ### Step 7 — Compute a full similarity matrix and read it like a heatmap table
 
 Purpose: this is the computational core of every "semantic search" feature you'll ever build — seeing the whole matrix at once shows *why* it works, not just one query at a time.
@@ -174,7 +184,8 @@ for i, row in enumerate(sim_matrix):
     print(f"S{i}: " + " ".join(f"{v:.2f}" for v in row))
 ```
 **What to notice:** sentences 0-1 (both about nginx restarts) should show high similarity to each other and lower similarity to sentences 4-5 (about certs). The diagonal is always 1.00 (a sentence is identical to itself). This matrix, at scale, is exactly what a vector DB's index is built to search efficiently instead of computing brute-force like this.
-
+```bash
+```
 ### Step 8 — Visualize the clustering (see it, don't just read numbers)
 
 ```python
@@ -194,7 +205,8 @@ plt.savefig("day2_embeddings.png", dpi=150, bbox_inches="tight")
 print("Saved day2_embeddings.png")
 ```
 Open the PNG — you should see nginx-related, scaling-related, and cert-related sentences forming visibly separate clusters, with "deploy" sitting alone since nothing else relates to it.
-
+```bash
+```
 ### Step 9 — Practical use case: near-duplicate detection (a real ops problem)
 
 Purpose: this is a genuine production use case — flagging near-duplicate incident tickets, log lines, or alerts even when the wording differs, so you don't get paged three times for the same underlying issue phrased differently.
@@ -221,7 +233,8 @@ for a, b, score in find_near_duplicates(tickets):
     print(f"[{score:.2f}] '{a}'  ~~  '{b}'")
 ```
 **Expected result:** the two nginx/liveness-probe tickets should pair up as near-duplicates despite completely different wording — this is a directly deployable pattern for ticket dedup or alert grouping.
-
+```bash
+```
 ---
 
 ## Deliverable
@@ -246,5 +259,3 @@ Save to `~/ai-course/day2-notes.md`:
 ```
 
 ---
-
-**Tomorrow (Day 3):** transformer architecture — you'll open up *how* the model actually uses these token embeddings to decide what comes next, including a look at real attention weights from a small model.
