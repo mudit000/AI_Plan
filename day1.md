@@ -98,6 +98,12 @@ pip install mlx mlx-lm
 python3 -c "import mlx.core as mx; print(mx.default_device())"
 ```
 
+```bash
+(venv) muditcse@Mac ai-course % python3 -c "import mlx.core as mx; print(mx.default_device())"
+Device(gpu, 0)
+(venv) muditcse@Mac ai-course % 
+```
+
 ---
 
 ## Part C — Hands-On: Run and Compare Local Models
