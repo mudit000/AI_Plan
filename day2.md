@@ -226,7 +226,20 @@ for i, row in enumerate(sim_matrix):
     print(f"S{i}: " + " ".join(f"{v:.2f}" for v in row))
 ```
 **What to notice:** sentences 0-1 (both about nginx restarts) should show high similarity to each other and lower similarity to sentences 4-5 (about certs). The diagonal is always 1.00 (a sentence is identical to itself). This matrix, at scale, is exactly what a vector DB's index is built to search efficiently instead of computing brute-force like this.
+
 ```bash
+(venv) muditcse@Mac ai-course % python3 similarity_matrix_heatmap_table.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2898.23it/s]
+     S0 S1 S2 S3 S4 S5 S6
+S0: 1.00 0.59 0.08 0.12 0.21 0.18 0.12
+S1: 0.59 1.00 0.09 0.12 0.16 0.09 0.08
+S2: 0.08 0.09 1.00 0.63 -0.00 0.00 0.11
+S3: 0.12 0.12 0.63 1.00 0.15 0.14 0.29
+S4: 0.21 0.16 -0.00 0.15 1.00 0.74 0.20
+S5: 0.18 0.09 0.00 0.14 0.74 1.00 0.20
+S6: 0.12 0.08 0.11 0.29 0.20 0.20 1.00
+(venv) muditcse@Mac ai-course % 
 ```
 ### Step 8 — Visualize the clustering (see it, don't just read numbers)
 
