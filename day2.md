@@ -81,6 +81,9 @@ Token count: 8
 ### Step 2 — Prove the "strawberry problem" to yourself
 
 ```python
+import tiktoken
+
+enc = tiktoken.get_encoding("cl100k_base")
 for word in ["strawberry", "kubectl", "nginx", "the", "unbelievable"]:
     toks = enc.encode(word)
     pieces = [enc.decode([t]) for t in toks]
