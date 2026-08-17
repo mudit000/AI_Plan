@@ -262,7 +262,15 @@ print("Saved day2_embeddings.png")
 ```
 Open the PNG — you should see nginx-related, scaling-related, and cert-related sentences forming visibly separate clusters, with "deploy" sitting alone since nothing else relates to it.
 ```bash
+(venv) muditcse@Mac ai-course % python3 visulize_clustering.py       
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 6528.84it/s]
+Saved day2_embeddings.png
+(venv) muditcse@Mac ai-course %
 ```
+![Visualize the clustering](./img/day2_embeddings.png)
+
+
 ### Step 9 — Practical use case: near-duplicate detection (a real ops problem)
 
 Purpose: this is a genuine production use case — flagging near-duplicate incident tickets, log lines, or alerts even when the wording differs, so you don't get paged three times for the same underlying issue phrased differently.
