@@ -124,6 +124,30 @@ ollama run llama3.2
 ```
 Ask it something like: *"Explain what a Kubernetes readiness probe does, in 2 sentences."* Then `/bye` to exit, and repeat with `phi3` and `llama3.1:8b`, asking the exact same question each time.
 
+```bash
+(venv) muditcse@Mac ai-course % ollama run llama3.2
+
+>>> Explain what a Kubernetes readiness probe does, in 2 sentences.
+A Kubernetes readiness probe is a mechanism that allows you to monitor the health of a pod or service and determine when it's ready for traffic to be routed to it. When a readiness 
+probe detects that a container is running and responding correctly, it signals the Kubernetes scheduler to deploy incoming traffic to that pod.
+
+>>> /bye
+(venv) muditcse@Mac ai-course % ollama run phi3    
+>>> Explain what a Kubernetes readiness probe does, in 2 sentences.
+A Kubernetes readiness probe is used to determine if a container within a pod is ready to handle traffic by periodically performing checks on the application inside it until they 
+pass or fail for an extended amount of time. If all probes consistently return successful results, the container is considered "ready" and can accept network traffic; otherwise, 
+Kubernetes routes requests elsewhere.
+
+>>> /bye
+(venv) muditcse@Mac ai-course % ollama run llama3.1:8b
+>>> Explain what a Kubernetes readiness probe does, in 2 sentences.
+A Kubernetes readiness probe is a mechanism that checks if an application or pod is ready to receive traffic and requests from clients. If the probe succeeds, it indicates that the 
+application is healthy and ready for use, allowing the pod to be marked as "ready" by the Kubernetes scheduler and routing traffic to it.
+
+>>> /bye
+(venv) muditcse@Mac ai-course % 
+```
+
 **What to notice:** response speed (does 8B feel noticeably slower to start streaming?) and answer quality/depth (does 8B give a more precise or more caveated answer?).
 
 ### Step 8 — Benchmark it properly instead of just eyeballing it
