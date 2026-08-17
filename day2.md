@@ -1,6 +1,6 @@
 # Day 2 — Tokenization & Embeddings
 
-![Tokenization to embedding pipeline](day2-diagram.svg)
+![Tokenization to embedding pipeline](./img/day2-diagram.svg)
  
 *Raw text gets split into sub-word tokens, each token maps to an integer ID via a vocabulary lookup, and the full sequence collapses into one embedding vector representing the sentence's meaning. Today you'll generate every stage of this yourself.*
 
